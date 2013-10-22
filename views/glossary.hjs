@@ -2,27 +2,39 @@
 <html>
   <head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="/javascripts/glossary.js"></script>
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>This is our list of terms</p>
-    <dl>
-    	{{#defs}}
-    		<dt>{{term}}</li>
-    		<dd>{{definition}}</dd>
-    	{{/defs}}
-    </dl>
-    <div class="add-definition">
-    	<form action="/adddefinition" method="POST">
-    		<label for="term">Term:</label>
-    		<input name="term" class="term"/>
-    		<label for="definition">Definition:</label>
-    		<input name="definition" class="definition"/>
-    		<button type="submit">Submit</button>
-    	</form>
-    </div>
+
+  	<div class="container">
+  
+		<h1>{{ title }}</h1>
+	    <p class="lead">A selection of terms for seafarers.</p>
+	    <dl class="dl-horizontal">
+	    	{{#defs}}
+	    		<dt>{{term}}</li>
+	    		<dd>{{definition}}</dd>
+	    	{{/defs}}
+	    </dl>
+
+	    <div class="add-definition">
+	    	<form action="/adddefinition" method="POST" role="form">
+	    		<div class="form-group">
+		    		<label for="term">Term:</label>
+		    		<input name="term" class="term form-control"/>
+		    		<label for="definition">Definition:</label>
+		    		<textarea name="definition" class="definition form-control"></textarea>
+		    		<button type="submit">Add Definition</button>
+				</div>		    		
+	    	</form>
+	    </div>
+
+	</div>
+    
   </body>
 </html>
