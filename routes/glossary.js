@@ -1,7 +1,11 @@
 var DB_NAME = 'sfdtest1'; 
+var PROD_DB = 'mongodb://dbuser:welikeboats@ds045107.mongolab.com:45107/MongoLab-xl'; 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/' + DB_NAME);
+
+//mongoose.connect('mongodb://localhost/' + DB_NAME);
+
+mongoose.connect(PROD_DB); 
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
