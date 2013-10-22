@@ -19,7 +19,9 @@ $(function(){
 				term : $add_def_form.find('.term').val(), 
 				definition : $add_def_form.find('.definition').val()
 			},
-			function(){}, 
+			function(){
+				location.reload(); 
+			}, 
 			'json'
 			);
 
