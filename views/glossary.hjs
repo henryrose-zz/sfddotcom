@@ -3,10 +3,26 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/javascripts/glossary.js"></script>
   </head>
   <body>
     <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
     <p>This is our list of terms</p>
+    <dl>
+    	{{#defs}}
+    		<dt>{{term}}</li>
+    		<dd>{{definition}}</dd>
+    	{{/defs}}
+    </dl>
+    <div class="add-definition">
+    	<form action="/adddefinition" method="POST">
+    		<label for="term">Term:</label>
+    		<input name="term" class="term"/>
+    		<label for="definition">Definition:</label>
+    		<input name="definition" class="definition"/>
+    		<button type="submit">Submit</button>
+    	</form>
+    </div>
   </body>
 </html>
