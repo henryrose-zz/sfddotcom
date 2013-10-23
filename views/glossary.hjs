@@ -22,18 +22,6 @@
 	    	{{/defs}}
 	    </dl>
 
-	    <div class="add-definition">
-	    	<form action="/adddefinition" method="POST" role="form">
-	    		<div class="form-group">
-		    		<label for="term">Term:</label>
-		    		<input name="term" class="term form-control"/>
-		    		<label for="definition">Definition:</label>
-		    		<textarea name="definition" class="definition form-control"></textarea>
-		    		<button type="submit">Add Definition</button>
-				</div>		    		
-	    	</form>
-	    </div>
-
 	</div>
     
   </body>

@@ -3,9 +3,9 @@ var PROD_DB = 'mongodb://dbuser:welikeboats@ds045107.mongolab.com:45107/MongoLab
 
 var mongoose = require('mongoose');
 
-//mongoose.connect('mongodb://localhost/' + DB_NAME);
+mongoose.connect('mongodb://localhost/' + DB_NAME);
 
-mongoose.connect(PROD_DB); 
+//mongoose.connect(PROD_DB); 
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -32,20 +32,18 @@ exports.index = function(req, res){
 			console.log(err); 
 			return; 
 		}
-		console.log(definitions); 
-		
 
-	res.render('glossary', { 
-		title: 'Sailing For Dummies: Glossary',
-		defs : definitions
-	});		
+		res.render('glossary', { 
+			title: 'Sailing For Dummies: Glossary',
+			defs : definitions
+		});		
 
 	});
 
  	
 };
 
-exports.addDefinition = function (req, res){
+exports.restAddDefinition = function (req, res){
 
 
 	var new_definition = new Definition({
@@ -69,3 +67,9 @@ exports.addDefinition = function (req, res){
 
 	})
 };
+
+exports.showAddDefinition = function (req, res) {
+	res.render('add-definition', {
+		title : 'Add Definition'
+	});
+}

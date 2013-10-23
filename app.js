@@ -33,7 +33,10 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 
 app.get('/glossary', glossary.index);
-app.post('/adddefinition', glossary.addDefinition); 
+
+app.get('/adddefinition', glossary.showAddDefinition);
+
+app.post('/adddefinition', glossary.restAddDefinition); 
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
