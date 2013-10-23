@@ -43,6 +43,17 @@ exports.index = function(req, res){
  	
 };
 
+exports.singleTermPage = function (req, res) {
+
+	var definition = Definition.findOne({ term : req.params.term}, function (err, definition_obj){
+		if (err){
+			console.log(err); 
+		}
+		res.render('single-term-page', definition_obj);
+	})
+
+}; 
+
 exports.restAddDefinition = function (req, res){
 
 

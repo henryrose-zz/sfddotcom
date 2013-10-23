@@ -34,8 +34,9 @@ app.get('/users', user.list);
 
 app.get('/glossary', glossary.index);
 
-app.get('/adddefinition', glossary.showAddDefinition);
+app.get('/glossary/term/:term', glossary.singleTermPage);
 
+app.get('/adddefinition', glossary.showAddDefinition);
 app.post('/adddefinition', glossary.restAddDefinition); 
 
 http.createServer(app).listen(app.get('port'), function(){
