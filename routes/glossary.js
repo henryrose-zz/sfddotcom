@@ -3,9 +3,9 @@ var PROD_DB = 'mongodb://dbuser:welikeboats@ds045107.mongolab.com:45107/MongoLab
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/' + DB_NAME);
+//mongoose.connect('mongodb://localhost/' + DB_NAME);
 
-//mongoose.connect(PROD_DB); 
+mongoose.connect(PROD_DB); 
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -26,17 +26,26 @@ var Definition = mongoose.model('Definition', definitionSchema);
 
 exports.index = function(req, res){
 
-	var definitions = Definition.find(function(err, definitions){
-
-		if(err){
-			console.log(err); 
-			return; 
+	var definitions = Definition.find(
+		{}, 
+		'term definition', 
+		{
+			sort : {
+				term : 1
+			}
 		}
+		, 
+		function(err, definitions){
 
-		res.render('glossary', { 
-			title: 'Sailing For Dummies: Glossary',
-			defs : definitions
-		});		
+			if(err){
+				console.log(err); 
+				return; 
+			}
+
+			res.render('glossary', { 
+				title: 'Sailing For Dummies: Glossary',
+				defs : definitions
+			});		
 
 	});
 
@@ -58,7 +67,8 @@ exports.restAddDefinition = function (req, res){
 
 
 	var new_definition = new Definition({
-		term : req.body.term, 
+		term : req.body.term.toLowerCase(), 
+
 		definition: req.body.definition
 	});
 
