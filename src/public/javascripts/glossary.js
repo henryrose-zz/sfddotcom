@@ -17,7 +17,9 @@ $(function(){
 			'/adddefinition', 
 			{
 				term : $add_def_form.find('.term').val(), 
-				definition : $add_def_form.find('.definition').val()
+				short_definition : $add_def_form.find('.short-definition').val(),
+				long_definition : $add_def_form.find('.long-definition').val()
+
 			},
 			function(){
 				location.reload(); 

@@ -21,7 +21,8 @@ db.once('open', function callback () {
 
 var definitionSchema = mongoose.Schema({
     term: String, 
-    definition: String
+    short_definition: String, 
+    long_definition: String
 }); 
 
 var Definition = mongoose.model('Definition', definitionSchema); 
@@ -72,8 +73,8 @@ exports.restAddDefinition = function (req, res){
 
     var new_definition = new Definition({
         term : req.body.term.toLowerCase(), 
-
-        definition: req.body.definition
+        short_definition: req.body.short_definition,
+        long_definition: req.body.long_definition
     });
 
 

@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/lib/bootstrap-3.0.0.min.css">
+
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="/javascripts/lib/jquery-1.10.2.min.map"></script>
+
     <script src="/javascripts/glossary.js"></script>
   </head>
   <body>
@@ -20,8 +24,11 @@
 	    		<div class="form-group">
 		    		<label for="term">Term:</label>
 		    		<input name="term" class="term form-control"/>
-		    		<label for="definition">Definition:</label>
-		    		<textarea name="definition" class="definition form-control"></textarea>
+		    		<label for="short_definition">Short Definition:</label>
+		    		<textarea name="short-definition" class="short-definition form-control"></textarea>
+
+		    		<label for="long-definition">Long Definition:</label>
+		    		<textarea name="long-definition" class="long-definition form-control"></textarea>
 		    		<button type="submit">Add Definition</button>
 				</div>		    		
 	    	</form>
