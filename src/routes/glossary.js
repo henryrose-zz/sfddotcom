@@ -34,7 +34,7 @@ exports.index = function(req, res){
 
     var definitions = Definition.find(
         {}, 
-        'term definition', 
+        'term short_definition', 
         {
             sort : {
                 term : 1
