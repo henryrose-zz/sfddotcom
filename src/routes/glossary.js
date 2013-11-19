@@ -9,8 +9,6 @@ if (process.env.CUSTOMCONNSTR_MONGODB_DEFINITIONS) {
 } else {
     db_connection_string = 'mongodb://localhost/' + DB_NAME ;
 }
- 
-db_connection_string = 'mongodb://dbuser:welikeboats@ds045107.mongolab.com:45107/MongoLab-xl'; 
 
 mongoose.connect(db_connection_string); 
 
