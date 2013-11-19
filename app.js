@@ -4,9 +4,9 @@
  */
 
 var express = require('express');
-var routes = require('./routes');
-var user = require('./routes/user');
-var glossary = require('./routes/glossary'); 
+var routes = require('./src/routes');
+var user = require('./src/routes/user');
+var glossary = require('./src/routes/glossary'); 
 var http = require('http');
 var path = require('path');
 
@@ -14,15 +14,15 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/src/views'));
 app.set('view engine', 'hjs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('less-middleware')({ src: path.join(__dirname, '/src/public') }));
+app.use(express.static(path.join(__dirname, '/src/public')));
 
 // development only
 if ('development' == app.get('env')) {
