@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Latest compiled and minified CSS -->
+	<!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">-->
+	<link rel="stylesheet" type="text/css" href="/stylesheets/lib/bootstrap-3.0.0.min.css">
+    
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+    <script src="/javascripts/lib/jquery-1.10.2.min.js"></script>
+    
+    <script src="/javascripts/glossary.js"></script>
+  </head>
+  <body>
+
+  	<div class="container">
+  
+		<div class="row">
+			<h1>{{ term }}</h1>
+		</div>
+
+		<div class="row">
+	    	<p class="lead"><em>{{short_definition}}</em></p>
+	    </div>
+	    <div class="row">
+	    	<p class="">{{long_definition}}</p>
+	    </div>
+
+	    <div class="row">
+	    	<a href="/glossary">Back to list</a>
+	    </div>
+	</div>
+    
+  </body>
+</html>

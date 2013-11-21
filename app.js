@@ -12,10 +12,14 @@ var path = require('path');
 
 var app = express();
 
+app.engine('html', require('hogan-express'));
+app.enable('view cache');
+
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, '/src/views'));
-app.set('view engine', 'hjs');
+app.set('view engine', 'html');
 app.use(express.favicon(path.join(__dirname,'/public/img/favicon.ico')));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
