@@ -9,6 +9,7 @@ This project includes the bones of a little glossary app. It's being built to po
 
 
 To use it:
+
 1. install node on your machine (go here: http://nodejs.org/)
 1. install mongo on your machine (go here: http://www.mongodb.org/)
 1. clone this repository

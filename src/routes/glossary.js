@@ -47,9 +47,16 @@ exports.index = function(req, res){
                 return; 
             }
 
-            res.render('glossary', { 
-                title: 'Sailing For Dummies: Glossary',
+            res.locals = {
+                title : 'Sailing For Dummys: A Glossary', 
                 defs : definitions
+            }
+
+            res.render(
+                'layout',{
+                partials : {
+                    page_body : 'glossary'
+                }
             });     
 
     });
@@ -63,7 +70,16 @@ exports.singleTermPage = function (req, res) {
         if (err){
             console.log(err); 
         }
-        res.render('single-term-page', definition_obj);
+
+        res.locals = definition_obj; 
+        //res.render('single-term-page', definition_obj);
+
+        res.render(
+            'layout', {
+            partials : {
+                page_body : 'single-term-page'
+            }
+        });
     });
 
 }; 
@@ -95,7 +111,17 @@ exports.restAddDefinition = function (req, res){
 };
 
 exports.showAddDefinition = function (req, res) {
-    res.render('add-definition', {
+
+    res.locals = {
         title : 'Add Definition'
-    });
+    }
+
+    res.render(
+        'layout', 
+        {
+            partials : {
+                page_body : 'add-defnition'
+            }
+        }
+        );
 };
