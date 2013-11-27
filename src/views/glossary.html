@@ -1,11 +1,11 @@
 
-	<div class="container">
+<div class="container">
 
 	<h1>{{ title }}</h1>
     <p class="lead">A selection of terms for seafarers.</p>
     <dl class="dl-horizontal">
    		{{#defs}}
-    		<dt><a href="/glossary/term/{{term}}">{{term}}</a></li>
+    		<dt><a href="/glossary/{{term}}">{{term}}</a></li>
     		<dd>{{short_definition}}</dd>
     	{{/defs}}
     </dl>
