@@ -48,7 +48,7 @@ exports.index = function(req, res){
             }
 
             res.locals = {
-                title : 'Sailing For Dummys: A Glossary', 
+                title : 'Boationary: A Glossary', 
                 defs : definitions
             }
 
