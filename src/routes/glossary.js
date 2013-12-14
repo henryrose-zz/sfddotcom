@@ -48,9 +48,9 @@ exports.index = function(req, res){
             }
 
             res.locals = {
-                title : 'Boationary: A Glossary', 
+                title : 'Boaticon: A Glossary of Nautical Terms', 
                 defs : definitions
-            }
+            };
 
             res.render(
                 'layout',{
@@ -114,7 +114,7 @@ exports.showAddDefinition = function (req, res) {
 
     res.locals = {
         title : 'Add Definition'
-    }
+    };
 
     res.render(
         'layout', 
