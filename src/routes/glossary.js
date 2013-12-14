@@ -117,11 +117,9 @@ exports.showAddDefinition = function (req, res) {
     };
 
     res.render(
-        'layout', 
-        {
-            partials : {
-                page_body : 'add-defnition'
-            }
+        'layout', {
+        partials : {
+            page_body : 'add-definition'
         }
-        );
+    });
 };
