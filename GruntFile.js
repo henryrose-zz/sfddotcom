@@ -20,6 +20,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           file: 'app.js',
+          watchedExtensions: ['js', 'html'],
           env: {
             PORT: '8080'
           }
