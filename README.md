@@ -15,6 +15,7 @@ To use it:
 1. clone this repository
 1. run 'npm install'
 1. start mongo
-1. run 'node app.js'
+1. run 'grunt nodemon', this runs the app in dev mode, restarting when it detects a file change. 
+
 
 Enjoy!

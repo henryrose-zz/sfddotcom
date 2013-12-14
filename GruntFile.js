@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'), 
     jshint: {
         // define the files to lint
-        files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+        files: ['gruntfile.js', 'src/**/*.js'],
         // configure JSHint (documented at http://www.jshint.com/docs/)
         options: {
           // more options here if you want to override JSHint defaults
@@ -15,12 +15,24 @@ module.exports = function(grunt) {
                 module: true
             }
         }
+    }, 
+    nodemon: {
+      dev: {
+        options: {
+          file: 'app.js',
+          env: {
+            PORT: '8080'
+          }
+        }
+      }
     }
   });
 
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
 
-   grunt.registerTask('default', ['jshint']);
+  grunt.loadNpmTasks('grunt-nodemon');
+
+  grunt.registerTask('default', ['jshint']);
 
 };
